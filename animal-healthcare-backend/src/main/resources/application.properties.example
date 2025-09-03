@@ -1,8 +1,8 @@
 # Database Configuration
-# Note: Configure these environment variables in your deployment environment
+# Copy this file to application.properties and update with your actual values
 spring.datasource.url=jdbc:mysql://localhost:3306/animalrescue?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-spring.datasource.username=${DB_USERNAME:root}
-spring.datasource.password=${DB_PASSWORD:your_database_password_here}
+spring.datasource.username=your_database_username
+spring.datasource.password=your_database_password
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # JPA/Hibernate Configuration
@@ -34,6 +34,7 @@ spring.web.cors.allowed-headers=*
 spring.web.cors.allow-credentials=true
 
 # JWT Configuration
-# IMPORTANT: Set this to a secure random string in production (minimum 64 characters for HS512)
-app.jwtSecret=${JWT_SECRET:generate_a_secure_random_jwt_secret_key_minimum_64_characters_long}
+# IMPORTANT: Generate a secure random string (minimum 64 characters for HS512)
+# You can use: openssl rand -base64 64
+app.jwtSecret=your_jwt_secret_key_here_minimum_64_characters_long
 app.jwtExpirationMs=86400000

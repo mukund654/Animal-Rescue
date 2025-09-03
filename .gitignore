@@ -132,6 +132,49 @@ uploads/
 user-uploads/
 *.config.local.js
 
+# Security - Sensitive Configuration Files
+# NEVER commit actual configuration with real credentials
+application.properties
+application-*.properties
+application.yml
+application-*.yml
+application.yaml
+application-*.yaml
+!application.properties.example
+!application-*.properties.example
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.staging
+!.env.example
+
+# Database files and backups
+*.sql.backup
+*.dump
+*.backup
+database.db
+*.db-journal
+
+# SSL Certificates and Keys
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+keystore.jks
+truststore.jks
+
+# API Keys and Secrets
+api-keys.txt
+secrets.txt
+credentials.json
+service-account-*.json
+
 # Spring Boot
 application-*.yml
 application-*.yaml

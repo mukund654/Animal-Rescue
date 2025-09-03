@@ -2,7 +2,8 @@
 
 class AuthManager {
     constructor() {
-        this.apiUrl = 'http://localhost:8080/api';
+        // Use environment variable or default to localhost for development
+        this.apiUrl = window.API_BASE_URL || 'http://localhost:8080/api';
         this.init();
     }
 
