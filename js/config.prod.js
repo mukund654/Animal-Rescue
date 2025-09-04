@@ -3,7 +3,7 @@
 
 window.API_CONFIG = {
     // Backend API URL - UPDATE THIS after Railway deployment
-    BASE_URL: 'https://your-railway-app.up.railway.app/api',
+    BASE_URL: 'https://railway.com/project/983ebea3-fa16-48ac-93d5-0ba5d692be72?environmentId=a70dbf38-dd2d-467b-b017-60e77f8d6d5a',
     
     // Request timeout (30 seconds)
     TIMEOUT: 30000,
