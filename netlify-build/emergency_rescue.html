@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Animal Rescue - Animal Rescue</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/8d187dbc86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/emergency.css">
+    
+    <!-- Production Configuration -->
+    <script src="js/config.prod.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" id="homee">Home</a>
+        
+        <div class="dropdown">
+            <div class="animal-treatment">
+                <button class="dropbtn">Animal Treatment</button>
+                <i class="fa-solid fa-caret-down" style="color:#ff6e01;"></i>
+            </div>
+            <div class="dropdown-content">
+                <a href="https://www.justdial.com/Sehore/Doctors/nct-10892680" target="_blank">Veterinary Appointment</a>
+                <a href="https://www.justdial.com/Bhopal/Dieticians/nct-10161884" target="_blank">Dietician Appointment</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <div class="animal-care">
+                <button class="dropbtn">Animal Care</button>
+                <i class="fa-solid fa-caret-down" style="color:#ff6e01;"></i>
+            </div>
+            <div class="dropdown-content">
+                <a href="https://www.justdial.com/Bhopal/Trainer-Jobs/nct-10372869" target="_blank">Trainer</a>
+                <a href="pet_grooming.html">Pet Grooming</a>
+                <a href="videos_animalCare.html">Videos of animal care</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <div class="contact-ngos">
+                <button class="dropbtn">Emergency Rescue</button>
+                <i class="fa-solid fa-caret-down" style="color:#ff6e01;"></i>
+            </div>
+            <div class="dropdown-content">
+                <a href="emergency_rescue.html">Emergency Requests</a>
+                <a href="#submit-request">Submit Request</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <div class="find-people">
+                <button class="dropbtn">About us</button>
+                <i class="fa-solid fa-caret-down" style="color:#ff6e01;"></i>
+            </div>
+            <div class="dropdown-content">
+                <a href="services.html">Services</a>
+                <a href="ContactFrom_v1/index.html">Contact us</a>
+            </div>
+        </div>
+        
+        <div class="sign-btn">
+            <button id="btn1" onclick="window.location.href='sign_up.html'">Sign-Up</button>
+            <button id="loginBtn" onclick="showLoginModal()">Log-in</button>
+        </div>
+    </nav>
+
+    <!-- Emergency Hero Section - With Custom Background -->
+    <section class="home emergency-hero-bg" id="home">
+        <div class="content">
+            <h3>Emergency Animal Rescue <br></h3>
+            <p class="tagline">Help save animals in need. Submit emergency requests or volunteer to help rescue animals in your area.</p>
+            
+            <button class="btn" onclick="showRequestForm()">
+                <i class="fas fa-plus"></i> Submit Emergency Request
+            </button>
+            <button class="btn" onclick="showVolunteerSection()">
+                <i class="fas fa-hands-helping"></i> Volunteer to Help
+            </button>
+        </div>
+        <img src="images/bottom_wave.png" alt="" class="wave">
+    </section>
+
+    <!-- About Emergency Rescue Section -->
+    <section class="about" id="about">
+        <h2 class="deco-title">Emergency Rescue</h2>
+        
+        <div class="box-container">
+            <div class="image">
+                <img src="images/banner_1.png" alt="Emergency Animal Rescue">
+            </div>
+            
+            <div class="content">
+                <h3 class="title">Save Lives. Make a Difference.</h3>
+                <p>Our Emergency Animal Rescue system connects people who find animals in distress with volunteers ready to help. Whether you've found an injured animal or want to volunteer for rescue operations, our platform makes it easy to coordinate life-saving efforts in your community.</p>
+                
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Emergency Response</h3>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-users"></i>
+                        <h3>Community Network</h3>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7 Support</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services Section -->
+    <section class="pricing" id="pricing">
+        <h2 class="heading">Emergency Services</h2>
+        
+        <div class="box-container">
+            <div class="box">
+                <img src="images/pricing1.png" alt="">
+                <h3>Rescue Coordination</h3>
+                <h4 class="price">Free Service</h4>
+                <p>Connect with local volunteers and rescue teams for immediate animal assistance.</p>
+            </div>
+            
+            <div class="box">
+                <img src="images/pricing2.png" alt="">
+                <h3>Medical Emergency</h3>
+                <h4 class="price">24/7 Available</h4>
+                <p>Quick response for injured animals requiring immediate veterinary care.</p>
+            </div>
+            
+            <div class="box">
+                <img src="images/pricing1.png" alt="">
+                <h3>Volunteer Network</h3>
+                <h4 class="price">Join Today</h4>
+                <p>Become part of our growing community of animal rescue volunteers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Request Form -->
+    <section id="submit-request" class="contact" style="display: none;">
+        <h2 class="heading">Submit Emergency Request</h2>
+        
+        <form id="emergencyForm" class="emergency-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="animalType">Animal Type *</label>
+                        <select id="animalType" required>
+                            <option value="">Select Animal Type</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="cow">Cow</option>
+                            <option value="horse">Horse</option>
+                            <option value="bird">Bird</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level *</label>
+                        <select id="urgency" required>
+                            <option value="">Select Urgency</option>
+                            <option value="critical">Critical - Life Threatening</option>
+                            <option value="high">High - Injured/Sick</option>
+                            <option value="medium">Medium - Stranded</option>
+                            <option value="low">Low - Needs Care</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input type="text" id="location" placeholder="Enter detailed location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Your Name *</label>
+                        <input type="text" id="contactName" placeholder="Enter your name" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number *</label>
+                        <input type="tel" id="contactPhone" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" placeholder="Enter email (optional)">
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="description">Situation Description *</label>
+                    <textarea id="description" rows="4" placeholder="Describe the animal's condition, location details, and what kind of help is needed..." required></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="animalPhoto">Animal Photo (Optional)</label>
+                    <input type="file" id="animalPhoto" accept="image/*">
+                </div>
+                
+                <button type="submit" class="btn submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Emergency Request
+                </button>
+        </form>
+    </section>
+
+    <!-- Request Tabs -->
+    <section class="requests-section">
+        <div class="container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showTab('not-accepted')">
+                    <i class="fas fa-clock"></i> Pending Requests (<span id="pending-count">0</span>)
+                </button>
+                <button class="tab-btn" onclick="showTab('accepted')">
+                    <i class="fas fa-check-circle"></i> Accepted Requests (<span id="accepted-count">0</span>)
+                </button>
+            </div>
+
+            <!-- Not Accepted Requests -->
+            <div id="not-accepted" class="tab-content active">
+                <h3>Pending Emergency Requests</h3>
+                <div id="pendingRequests" class="requests-container">
+                    <!-- Pending requests will be populated here -->
+                </div>
+            </div>
+
+            <!-- Accepted Requests -->
+            <div id="accepted" class="tab-content">
+                <h3>Accepted Emergency Requests</h3>
+                <div id="acceptedRequests" class="requests-container">
+                    <!-- Accepted requests will be populated here -->
+                </div>
+            </div>
+    </div>
+    
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeChatModal()">&times;</span>
+            <div class="chat-header">
+                <h3><i class="fas fa-comments"></i> Chat with <span id="chatPartner"></span></h3>
+                <p>Request ID: <span id="chatRequestId"></span></p>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Chat messages will be populated here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="login-header">
+                <h3><i class="fas fa-sign-in-alt"></i> Quick Login</h3>
+                <p>Login to access chat functionality</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginUsername">Username *</label>
+                    <input type="text" id="loginUsername" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password *</label>
+                    <input type="password" id="loginPassword" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <p class="login-help">Please enter your credentials. If you don't have an account, <a href="sign_up.html">sign up here</a></p>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/emergency-backend.js"></script>
+</body>
+</html>

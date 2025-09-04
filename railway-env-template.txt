@@ -1,0 +1,56 @@
+# Railway Environment Variables Template
+# Copy these to your Railway project's Variables section
+
+# ================================================================
+# REQUIRED ENVIRONMENT VARIABLES FOR RAILWAY DEPLOYMENT
+# ================================================================
+
+# JWT Secret (CRITICAL - Generate a secure one!)
+# Generate with: openssl rand -base64 64
+JWT_SECRET=your_super_secure_jwt_secret_minimum_64_characters_long
+
+# Frontend URL (Update with your actual Netlify URL)
+FRONTEND_URL=https://your-netlify-site.netlify.app
+
+# Spring Profile (Use Railway configuration)
+SPRING_PROFILES_ACTIVE=railway
+
+# ================================================================
+# AUTOMATIC VARIABLES (Railway sets these automatically)
+# ================================================================
+
+# DATABASE_URL - Railway MySQL addon provides this automatically
+# PORT - Railway provides this automatically
+
+# ================================================================
+# OPTIONAL VARIABLES (Usually not needed)
+# ================================================================
+
+# If you need custom database connection pool settings:
+# DB_MAX_POOL_SIZE=20
+# DB_MIN_IDLE=5
+
+# If you need custom JWT expiration:
+# JWT_EXPIRATION_MS=86400000
+
+# ================================================================
+# INSTRUCTIONS:
+# ================================================================
+
+# 1. Go to your Railway project dashboard
+# 2. Click on your service (not the database)
+# 3. Go to "Variables" tab
+# 4. Add each variable above (except the automatic ones)
+# 5. Update FRONTEND_URL with your actual Netlify URL
+# 6. Generate a real JWT_SECRET using: openssl rand -base64 64
+# 7. Deploy your project
+
+# ================================================================
+# SECURITY NOTES:
+# ================================================================
+
+# ❌ NEVER commit actual secrets to git
+# ❌ NEVER share your JWT_SECRET publicly
+# ✅ Always use environment variables in production
+# ✅ Generate unique JWT secrets for each environment
+# ✅ Regularly rotate secrets for better security
